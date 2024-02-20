@@ -1,4 +1,5 @@
 import Agenda from "@/components/agenda/Agenda";
+import EventCard from "@/components/eventCard/EventCard";
 import Instructions from "@/components/instructions/Instructions";
 import Sponsors from "@/components/sponsors/Sponsors";
 import { Badge } from "@/components/ui/badge";
@@ -10,10 +11,35 @@ import {
   Facebook,
   Info,
   Instagram,
+  Lightbulb,
   MapPin,
   Twitter,
 } from "lucide-react";
 import Image from "next/image";
+
+const events = [
+  {
+    title: "Simba Uproar 2024 | Guwahati",
+    images: [
+      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1706699255%2Fdlbitczmy7n2v17uc4xy.png",
+    ],
+    slug: "abcd-xyz",
+  },
+  {
+    title: "Kanan Gill Experience - India Tour 2024 - Guwahati",
+    images: [
+      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1700556828%2Fiqwn93dgvkpc8vp8bvml.jpg",
+    ],
+    slug: "abcd-xyz",
+  },
+  {
+    title: "Kisi Ko Batana Mat by Anubhav Singh Bassi",
+    images: [
+      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1707894012%2Fmc6dexmf8biost4q27h6.png",
+    ],
+    slug: "abcd-xyz",
+  },
+];
 
 export default function EventDetails() {
   return (
@@ -28,39 +54,20 @@ export default function EventDetails() {
               className="w-full object-cover rounded-md"
               alt="Event Spotlight"
             />
-
-            <div class="border-b mt-12 pb-2">
-              <div className="flex gap-2 items-center">
-                <Info className="text-primary" />
-                <h2 className="text-lg font-semibold text-content uppercase">
-                  About
-                </h2>
-              </div>
-            </div>
-            <p className="mt-6">
-              Simba Uproar is back for its highly anticipated second season of
-              the country’s wildest experience. After a thrilling debut season,
-              Simba Uproar 2.0 promises to be bigger, bolder, and more
-              captivating than ever before, as it expands to six vibrant cities
-              across India.
-            </p>
-            <p className="mt-4">
-              Mumbai, Delhi, Bengaluru, Pune, Guwahati and Panchkula - Simba
-              Uproar 2.0 aims to unite music enthusiasts from all corners of the
-              country for an unparalleled celebration of music and culture. The
-              second season of Simba Uproar is set to take the country by storm,
-              with a line-up of stellar performances by upcoming hip-hop
-              artists, electrifying music acts, along with immersive
-              experiences, including interactive installations, special
-              performances, creating an atmosphere of fun and excitement. Join
-              Simba Uproar’s #THEWILDTRIBE & roar harder, Together!
-            </p>
           </div>
           <div className="w-full lg:w-4/12 ">
             <div className="border shadow-sm p-6 rounded-lg bg-white">
               <h1 className="text-xl font-semibold line-clamp-1">
                 B Praak Live
               </h1>
+              <div className="mt-4 flex gap-2">
+                <Badge variant="outline" className="cursor-pointer font-normal">
+                  Music
+                </Badge>
+                <Badge variant="outline" className="cursor-pointer font-normal">
+                  Cultural
+                </Badge>
+              </div>
               <div className="mt-4 flex items-center ">
                 <div className="bg-secondary rounded-lg p-3 inline-block">
                   <CalendarDays className="w-4 h-4 text-primary" />
@@ -87,14 +94,7 @@ export default function EventDetails() {
                   </span>
                 </div>
               </div>
-              <div className="mt-4 flex gap-2">
-                <Badge variant="outline" className="cursor-pointer font-normal">
-                  Music
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer font-normal">
-                  Cultural
-                </Badge>
-              </div>
+
               <div className="mt-4 flex gap-4">
                 <Button>
                   <ArrowUpRightSquare className="w-4 mr-1 rotate-45" />
@@ -106,30 +106,52 @@ export default function EventDetails() {
                 </Button>
               </div>
             </div>
-            <div className="border shadow-sm p-6 rounded-lg bg-white mt-6">
-              <h1 className="font-semibold line-clamp-1">
-                Invite your friends
-              </h1>
-              <p className="text-sm">and enjoy a shared experience</p>
-              <div className="border-b mt-1"></div>
-              <div className="mt-4 flex items-center gap-2">
-                <div className="bg-secondary rounded-lg p-3 inline-block">
-                  <Facebook className="w-4 h-4 text-primary" />
-                </div>
-                <div className="bg-secondary rounded-lg p-3 inline-block">
-                  <Twitter className="w-4 h-4 text-primary" />
-                </div>
-                <div className="bg-secondary rounded-lg p-3 inline-block">
-                  <Instagram className="w-4 h-4 text-primary" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+      </section>
+      <section className="max-w-screen-xl mx-auto p-4 mt-6">
+        <div className="border-b pb-2">
+          <div className="flex gap-2 items-center">
+            <Info className="text-primary" />
+            <h2 className="text-lg font-semibold text-content uppercase">
+              About The Event
+            </h2>
+          </div>
+        </div>
+        <p className="mt-6">
+          Simba Uproar is back for its highly anticipated second season of the
+          country’s wildest experience. After a thrilling debut season, Simba
+          Uproar 2.0 promises to be bigger, bolder, and more captivating than
+          ever before, as it expands to six vibrant cities across India.
+        </p>
+        <p className="mt-4">
+          Mumbai, Delhi, Bengaluru, Pune, Guwahati and Panchkula - Simba Uproar
+          2.0 aims to unite music enthusiasts from all corners of the country
+          for an unparalleled celebration of music and culture. The second
+          season of Simba Uproar is set to take the country by storm, with a
+          line-up of stellar performances by upcoming hip-hop artists,
+          electrifying music acts, along with immersive experiences, including
+          interactive installations, special performances, creating an
+          atmosphere of fun and excitement. Join Simba Uproar’s #THEWILDTRIBE &
+          roar harder, Together!
+        </p>
       </section>
       <Sponsors />
       <Instructions />
       <Agenda />
+      <section className="max-w-screen-xl mx-auto p-4 mt-12">
+        <div className="flex gap-2 items-center">
+          <Lightbulb className="text-primary" />
+          <h2 className="text-lg font-semibold text-content uppercase">
+            You May Also Like
+          </h2>
+        </div>
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {events.map((item, i) => (
+            <EventCard event={item} key={i} />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

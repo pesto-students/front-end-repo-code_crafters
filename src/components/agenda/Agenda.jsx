@@ -37,19 +37,19 @@ const Agenda = () => {
         </h2>
       </div>
 
-      <div class="text-sm font-medium text-center text-content border-b mt-6">
-        <ul class="flex flex-wrap -mb-px">
-          <li class="me-2">
+      <div className="text-sm font-medium text-center text-content border-b mt-6">
+        <ul className="flex flex-wrap -mb-px">
+          <li className="me-2">
             <button
-              class="inline-block p-4 border-b-2 border-transparent rounded-t-lg opacity-80"
+              className="inline-block p-4 border-b-2 border-transparent rounded-t-lg opacity-80"
               aria-current="page"
             >
               Mon, 23 June
             </button>
           </li>
-          <li class="me-2">
+          <li className="me-2">
             <button
-              class="inline-block p-4 border-b-2 border-content text-content rounded-t-lg  "
+              className="inline-block p-4 border-b-2 border-content text-content rounded-t-lg  "
               aria-current="page"
             >
               Tue, 24 June
@@ -57,7 +57,7 @@ const Agenda = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-6 grid grid-cols-2 gap-6">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {agenda.map((item, i) => (
           <Dialog key={i}>
             <DialogTrigger>

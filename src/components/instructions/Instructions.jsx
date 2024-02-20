@@ -11,7 +11,7 @@ const Instructions = () => {
         </h2>
       </div>
       <div className="mt-6">
-        <ul class="space-y-1 list-disc list-inside">
+        <ul className="space-y-1 list-disc list-inside">
           <li>Please carry a valid ID proof along with you. </li>
           <li>
             No refunds on purchased ticket are possible, even in case of any

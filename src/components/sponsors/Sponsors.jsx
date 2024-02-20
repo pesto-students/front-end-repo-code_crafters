@@ -17,14 +17,14 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto p-4 text-content mt-6">
       <div className="flex gap-2 items-center">
         <HandCoins className="text-primary" />
         <h2 className="text-lg font-semibold text-content uppercase">
           Official Sponsors
         </h2>
       </div>
-      <div className="mt-6 grid grid-cols-4 gap-6">
+      <div className="mt-6 grid grid-cols-3 lg:grid-cols-4 gap-6">
         {sponsors.map((item, i) => (
           <Image
             key={i}
