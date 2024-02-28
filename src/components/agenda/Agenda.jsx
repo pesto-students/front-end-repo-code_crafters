@@ -37,26 +37,27 @@ const Agenda = () => {
         </h2>
       </div>
 
-      <div className="text-sm font-medium text-center text-content border-b mt-6">
-        <ul className="flex flex-wrap -mb-px">
-          <li className="me-2">
-            <button
-              className="inline-block p-4 border-b-2 border-transparent rounded-t-lg opacity-80"
-              aria-current="page"
-            >
-              Mon, 23 June
-            </button>
-          </li>
-          <li className="me-2">
-            <button
-              className="inline-block p-4 border-b-2 border-content text-content rounded-t-lg  "
-              aria-current="page"
-            >
-              Tue, 24 June
-            </button>
-          </li>
-        </ul>
+      <div class="inline-flex rounded-md shadow-sm mt-6" role="group">
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium text-content bg-white border rounded-s-lg"
+        >
+          Mon, 23 June
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium text-content bg-white border-t border-b"
+        >
+          Tue, 24 June
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-medium text-content bg-white border rounded-e-lg"
+        >
+          Wed, 25 June
+        </button>
       </div>
+
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         {agenda.map((item, i) => (
           <Dialog key={i}>
