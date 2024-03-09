@@ -1,48 +1,17 @@
-import Agenda from "@/components/agenda/Agenda";
-import EventCard from "@/components/eventCard/EventCard";
-import Instructions from "@/components/instructions/Instructions";
-import Sponsors from "@/components/sponsors/Sponsors";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import React from "react";
+import { Badge } from "../ui/badge";
 import {
   ArrowUpRightSquare,
   Bookmark,
   CalendarDays,
-  Facebook,
   Info,
-  Instagram,
-  Lightbulb,
   MapPin,
-  Twitter,
 } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from "../ui/button";
+import Sponsors from "../sponsors/Sponsors";
 
-const events = [
-  {
-    title: "Simba Uproar 2024 | Guwahati",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1706699255%2Fdlbitczmy7n2v17uc4xy.png",
-    ],
-    slug: "abcd-xyz",
-  },
-  {
-    title: "Kanan Gill Experience - India Tour 2024 - Guwahati",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1700556828%2Fiqwn93dgvkpc8vp8bvml.jpg",
-    ],
-    slug: "abcd-xyz",
-  },
-  {
-    title: "Kisi Ko Batana Mat by Anubhav Singh Bassi",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1707894012%2Fmc6dexmf8biost4q27h6.png",
-    ],
-    slug: "abcd-xyz",
-  },
-];
-
-export default function EventDetails() {
+const EventOverview = () => {
   return (
     <>
       <section className="max-w-screen-xl mx-auto p-4 mt-12">
@@ -138,45 +107,8 @@ export default function EventDetails() {
         </p>
       </section>
       <Sponsors />
-      <Instructions />
-      <Agenda />
-      <section className="max-w-screen-xl mx-auto p-4 mt-12">
-        <div className="flex gap-2 items-center">
-          <Lightbulb className="text-primary" />
-          <h2 className="text-lg font-semibold text-content uppercase">
-            You May Also Like
-          </h2>
-        </div>
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {events.map((item, i) => (
-            <EventCard event={item} key={i} />
-          ))}
-        </div>
-      </section>
-
-      <Link
-        href="/abcd-xyz/explore"
-        className="fixed right-6 bg-primary bottom-6 text-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center "
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width={24}
-          height={24}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-circle-arrow-out-up-right"
-        >
-          <path d="M22 12A10 10 0 1 1 12 2" />
-          <path d="M22 2 12 12" />
-          <path d="M16 2h6v6" />
-        </svg>
-
-        <span class="sr-only">Icon description</span>
-      </Link>
     </>
   );
-}
+};
+
+export default EventOverview;

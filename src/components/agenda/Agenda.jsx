@@ -37,22 +37,22 @@ const Agenda = () => {
         </h2>
       </div>
 
-      <div class="inline-flex rounded-md shadow-sm mt-6" role="group">
+      <div className="inline-flex rounded-md shadow-sm mt-6" role="group">
         <button
           type="button"
-          class="px-4 py-2 text-sm font-medium text-content bg-white border rounded-s-lg"
+          className="px-4 py-2 text-sm font-medium text-content bg-white border rounded-s-lg"
         >
           Mon, 23 June
         </button>
         <button
           type="button"
-          class="px-4 py-2 text-sm font-medium text-content bg-white border-t border-b"
+          className="px-4 py-2 text-sm font-medium text-content bg-white border-t border-b"
         >
           Tue, 24 June
         </button>
         <button
           type="button"
-          class="px-4 py-2 text-sm font-medium text-content bg-white border rounded-e-lg"
+          className="px-4 py-2 text-sm font-medium text-content bg-white border rounded-e-lg"
         >
           Wed, 25 June
         </button>
