@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 import {
   ArrowUpRightSquare,
   Bookmark,
@@ -8,8 +8,8 @@ import {
   Info,
   MapPin,
 } from "lucide-react";
-import { Button } from "../ui/button";
-import Sponsors from "../sponsors/Sponsors";
+import { Button } from "@/components/ui/button";
+import Sponsors from "@/components/sponsors/Sponsors";
 
 const EventOverview = () => {
   return (

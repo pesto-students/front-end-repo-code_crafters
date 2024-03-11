@@ -1,18 +1,27 @@
-import { FolderSearch } from "lucide-react";
+import { FolderSearch, Plus } from "lucide-react";
 import React from "react";
-import { Card, CardContent, CardHeader } from "../ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Badge } from "../ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 const LostAndFound = () => {
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
-      <div className="flex gap-2 items-center">
-        <FolderSearch className="text-primary" />
-        <h2 className="text-lg font-semibold text-content uppercase">
-          Lost & Found
-        </h2>
+      <div className="flex items-center justify-between">
+        <div className="flex gap-2 items-center">
+          <FolderSearch className="text-primary" />
+          <h2 className="text-lg font-semibold text-content uppercase">
+            Lost & Found
+          </h2>
+        </div>
+        <div>
+          <Button variant="ghost">
+            <Plus className="w-4 h-4 mr-1" />
+            <span>Post something</span>
+          </Button>
+        </div>
       </div>
       <div className="mt-6 grid grid-cols-3 gap-6">
         <Card className="text-content">

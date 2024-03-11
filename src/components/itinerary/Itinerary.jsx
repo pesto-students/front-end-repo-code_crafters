@@ -27,7 +27,7 @@ const agenda = [
   },
 ];
 
-const Agenda = () => {
+const Itinerary = () => {
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
       <div className="flex gap-2 items-center">
@@ -122,4 +122,4 @@ const Agenda = () => {
   );
 };
 
-export default Agenda;
+export default Itinerary;

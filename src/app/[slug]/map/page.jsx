@@ -1,46 +1,27 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Map, { Marker } from "react-map-gl";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin } from "lucide-react";
+import Map from "react-map-gl";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const EventMap = () => {
-  const [viewport, setViewport] = useState({
-    width: "100%",
-    height: "100%",
-    longitude: 91.7762606424551,
-    latitude: 26.184199680346737,
-    zoom: 18.06736515681334,
-    attributionControl: false,
-  });
-
-  const handleMapMove = (evt) => {
-    console.log(evt);
-    setViewport(evt.viewport);
-  };
-
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
       <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 relative ">
+        <div className="col-span-2">
           <Map
-            {...viewport}
             mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX}
-            onViewportChange={(nextViewport) => setViewport(nextViewport)}
+            initialViewState={{
+              longitude: -122.4,
+              latitude: 37.8,
+              zoom: 14,
+            }}
+            style={{ width: "100%", height: "100%" }}
             mapStyle="mapbox://styles/mapbox/streets-v9"
-            onMove={handleMapMove}
-          >
-            <Marker
-              longitude={91.77638110591744}
-              latitude={26.184121306829823}
-              anchor="bottom"
-            >
-              <MapPin className="w-5 h-5 text-primary" />
-            </Marker>
-          </Map>
+          />
         </div>
         <div className="col-span-1 h-[500px]">
           <Card className="text-content h-full">

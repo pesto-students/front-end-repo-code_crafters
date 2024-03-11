@@ -1,6 +1,6 @@
-import Agenda from "@/components/agenda/Agenda";
 import EventCard from "@/components/eventCard/EventCard";
 import Instructions from "@/components/instructions/Instructions";
+import Itinerary from "@/components/itinerary/Itinerary";
 import Sponsors from "@/components/sponsors/Sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -8,12 +8,9 @@ import {
   ArrowUpRightSquare,
   Bookmark,
   CalendarDays,
-  Facebook,
   Info,
-  Instagram,
   Lightbulb,
   MapPin,
-  Twitter,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -139,7 +136,7 @@ export default function EventDetails() {
       </section>
       <Sponsors />
       <Instructions />
-      <Agenda />
+      <Itinerary />
       <section className="max-w-screen-xl mx-auto p-4 mt-12">
         <div className="flex gap-2 items-center">
           <Lightbulb className="text-primary" />
@@ -155,7 +152,7 @@ export default function EventDetails() {
       </section>
 
       <Link
-        href="/abcd-xyz/explore"
+        href="/abcd-xyz/overview"
         className="fixed right-6 bg-primary bottom-6 text-white font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center "
       >
         <svg
