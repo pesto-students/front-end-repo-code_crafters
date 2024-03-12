@@ -80,7 +80,7 @@ const Spotlight = () => {
                     alt="Event Spotlight"
                   />
                 </div>
-                <div className="w-full lg:w-4/12 border shadow-sm p-6 rounded-lg bg-white">
+                <div className="w-full lg:w-4/12 border p-6 rounded-lg bg-white">
                   <h1 className="text-xl font-semibold line-clamp-1">{event.title}</h1>
                   <div className="mt-4 flex items-center ">
                     <div className="bg-secondary rounded-lg p-3 inline-block">

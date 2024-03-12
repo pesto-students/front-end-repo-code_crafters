@@ -171,8 +171,6 @@ export default function EventDetails() {
           <path d="M22 2 12 12" />
           <path d="M16 2h6v6" />
         </svg>
-
-        <span class="sr-only">Icon description</span>
       </Link>
     </>
   );
