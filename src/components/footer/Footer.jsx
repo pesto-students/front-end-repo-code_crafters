@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -10,21 +11,27 @@ const Footer = () => {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          {/* <Image width={50} height={50} src="https://flowbite.com/docs/images/logo.svg" className="w-8 h-8" alt="Flowbite Logo"/> */}
-          <span className="self-center text-2xl font-bold whitespace-nowrap text-white">
+          <Image
+            width={50}
+            height={50}
+            src="https://flowbite.com/docs/images/logo.svg"
+            className="w-8 h-8"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center text-xl font-bold whitespace-nowrap text-white">
             Evento
           </span>
         </Link>
-        <p className="text-white mt-6 opacity-80">
+        <p className="text-white mt-3 opacity-80">
           Evento is a platform that helps you discover and buy the best in
           events, travel and food in your city. We strive to curate experiences
           that are worth your time and money, possibly something you have never
           tried before.
         </p>
-        <h3 className="self-center text-2xl font-bold whitespace-nowrap text-white mt-6">
+        <h3 className="self-center text-xl font-bold whitespace-nowrap text-white mt-6">
           For Event Organizers
         </h3>
-        <p className="text-white mt-6 opacity-80">
+        <p className="text-white mt-3 opacity-80">
           We help the event organizers manage their event in a better,
           structured, and sophisticated way without spending huge amounts, it
           will help them to advertise their brands and sponsors. Can highlight
