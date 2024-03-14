@@ -25,17 +25,17 @@ const tabs = [
   },
   { title: "Event Map", path: "map", icon: <Map className=" w-4" /> },
   {
-    title: "Lost & Found",
-    path: "lost-found",
-    icon: <FolderSearch className=" w-4" />,
-  },
-  { title: "Reviews", path: "reviews", icon: <PenLine className=" w-4" /> },
-  {
     title: "Instructions",
     path: "instructions",
     icon: <ListCollapse className=" w-4" />,
   },
   { title: "Emergency", path: "emergency", icon: <Siren className=" w-4" /> },
+  {
+    title: "Lost & Found",
+    path: "lost-found",
+    icon: <FolderSearch className=" w-4" />,
+  },
+  { title: "Reviews", path: "reviews", icon: <PenLine className=" w-4" /> },
 ];
 
 export default function RootLayout({ children }) {
