@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       {displayNav && (
-        <nav className="w-full fixed bg-white">
+        <nav className="hidden lg:block w-full fixed bg-white z-20">
           <div className="max-w-screen-xl mx-auto p-4 text-center text-content">
             <ul className="flex flex-wrap gap-6">
               {tabs.map((item, i) => (

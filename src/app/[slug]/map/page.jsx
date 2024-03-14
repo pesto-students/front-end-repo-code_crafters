@@ -4,7 +4,13 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MapPin } from "lucide-react";
-import Map, { Marker, NavigationControl, Popup } from "react-map-gl";
+import Map, {
+  GeolocateControl,
+  Marker,
+  NavigationControl,
+  Popup,
+  useMap,
+} from "react-map-gl";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import "mapbox-gl/dist/mapbox-gl.css";
 import styled from "styled-components";
@@ -16,7 +22,7 @@ const StyledPopup = styled(Popup)`
     border-radius: 10px;
     font-family: Roboto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 240px;
+    width: 240px;
   }
   .mapboxgl-popup-close-button {
     right: 5px;
@@ -27,6 +33,28 @@ const StyledPopup = styled(Popup)`
     outline: none;
   }
 `;
+
+const RecenterButton = ({ className }) => {
+  const { current: map } = useMap();
+
+  const onClick = () => {
+    map.flyTo({ center: [91.77634, 26.184169], zoom: 18 });
+  };
+
+  return (
+    <button
+      type="button"
+      className={clsx(
+        "flex items-center justify-center w-[29px] h-[29px] bg-white rounded-[5px] border-2 border-gray-300 shadow-md",
+        className
+      )}
+      onClick={onClick}
+    >
+      <MapPin className="w-4 fill-red-500 stroke-white" />
+      <span class="sr-only">Re-center</span>
+    </button>
+  );
+};
 
 const EventMap = () => {
   const [viewState, setViewState] = useState({
@@ -109,7 +137,7 @@ const EventMap = () => {
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
       <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-2 overflow-hidden h-[500px] relative rounded-lg bg-gray-100">
+        <div className="col-span-3 lg:col-span-2 overflow-hidden h-[500px] relative rounded-lg bg-gray-100">
           <Map
             mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX}
             {...viewState}
@@ -118,6 +146,7 @@ const EventMap = () => {
             attributionControl={false}
             transitionDuration="200"
             onViewportChange={(viewState) => setViewState(viewState)}
+            reuseMaps
           >
             {pins.map((item, i) => (
               <>
@@ -166,11 +195,12 @@ const EventMap = () => {
                 )}
               </>
             ))}
-
+            <GeolocateControl position="bottom-right" />
             <NavigationControl position="bottom-right" />
+            <RecenterButton className="absolute top-[8px] right-[8px]" />
           </Map>
         </div>
-        <div className="col-span-1 h-[500px]">
+        <div className="hidden lg:block col-span-1 h-[500px]">
           <Card className="text-content h-full overflow-auto no-scrollbar">
             <Tabs defaultValue="amenities" className="w-full">
               <CardHeader className="flex flex-row">
