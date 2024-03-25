@@ -25,19 +25,12 @@ const EventOverview = () => {
               alt="Event Spotlight"
             />
           </div>
-          <div className="w-full lg:w-4/12 ">
-            <div className="border shadow-sm p-6 rounded-lg bg-white">
+          <div className="w-full lg:w-4/12">
+            <div className="border shadow-sm px-6 py-6 rounded-lg bg-white">
               <h1 className="text-xl font-semibold line-clamp-1">
-                B Praak Live
+                B Praak Live - Guwahati
               </h1>
-              <div className="mt-4 flex gap-2">
-                <Badge variant="outline" className="cursor-pointer font-normal">
-                  Music
-                </Badge>
-                <Badge variant="outline" className="cursor-pointer font-normal">
-                  Cultural
-                </Badge>
-              </div>
+
               <div className="mt-4 flex items-center ">
                 <div className="bg-secondary rounded-lg p-3 inline-block">
                   <CalendarDays className="w-4 h-4 text-primary" />
@@ -63,6 +56,15 @@ const EventOverview = () => {
                     ENTRY - Starts From Rs 200
                   </span>
                 </div>
+              </div>
+
+              <div className="mt-4 flex gap-2">
+                <Badge variant="outline" className="cursor-pointer font-normal">
+                  Music
+                </Badge>
+                <Badge variant="outline" className="cursor-pointer font-normal">
+                  Cultural
+                </Badge>
               </div>
 
               <div className="mt-4 flex gap-4">

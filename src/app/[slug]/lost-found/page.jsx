@@ -1,3 +1,4 @@
+"use client";
 import { FolderSearch, Plus } from "lucide-react";
 import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -5,8 +6,11 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 const LostAndFound = () => {
+  const { slug } = useParams();
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
       <div className="flex items-center justify-between">
@@ -17,14 +21,16 @@ const LostAndFound = () => {
           </h2>
         </div>
         <div>
-          <Button variant="ghost">
-            <Plus className="w-4 h-4 mr-1" />
-            <span>Post something</span>
-          </Button>
+          <Link href={`/${slug}/lost-found/create`}>
+            <Button variant="ghost">
+              <Plus className="w-4 h-4 mr-1" />
+              <span>Post something</span>
+            </Button>
+          </Link>
         </div>
       </div>
-      <div className="mt-6 grid grid-cols-3 gap-6">
-        <Card className="text-content">
+      <div className="mt-6 grid grid-cols-12 gap-6">
+        <Card className="text-content col-span-12 md:col-span-6 lg:col-span-4">
           <CardHeader className="flex flex-row ">
             <div className="flex flex-1 gap-3">
               <Avatar>
@@ -66,7 +72,7 @@ const LostAndFound = () => {
             </div>
           </CardContent>
         </Card>
-        <Card className="text-content">
+        <Card className="text-content col-span-12 md:col-span-6 lg:col-span-4">
           <CardHeader className="flex flex-row ">
             <div className="flex flex-1 gap-3">
               <Avatar>

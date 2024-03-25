@@ -51,7 +51,7 @@ const RecenterButton = ({ className }) => {
       onClick={onClick}
     >
       <MapPin className="w-4 fill-red-500 stroke-white" />
-      <span class="sr-only">Re-center</span>
+      <span className="sr-only">Re-center</span>
     </button>
   );
 };
@@ -137,7 +137,7 @@ const EventMap = () => {
   return (
     <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
       <div className="grid grid-cols-3 gap-6">
-        <div className="col-span-3 lg:col-span-2 overflow-hidden h-[500px] relative rounded-lg bg-gray-100">
+        <div className="col-span-3 lg:col-span-2 overflow-hidden h-[300px] lg:h-[500px] relative rounded-lg bg-gray-100">
           <Map
             mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX}
             {...viewState}
@@ -149,12 +149,8 @@ const EventMap = () => {
             reuseMaps
           >
             {pins.map((item, i) => (
-              <>
-                <Marker
-                  key={i}
-                  longitude={item.longitude}
-                  latitude={item.latitude}
-                >
+              <div key={i}>
+                <Marker longitude={item.longitude} latitude={item.latitude}>
                   <button
                     onClick={() => handleMarkerClick(item.id)}
                     className={clsx(
@@ -170,7 +166,6 @@ const EventMap = () => {
 
                 {item.id === currentPlaceId && (
                   <StyledPopup
-                    key={i}
                     longitude={item.longitude}
                     latitude={item.latitude}
                     anchor="bottom"
@@ -193,14 +188,14 @@ const EventMap = () => {
                     </div>
                   </StyledPopup>
                 )}
-              </>
+              </div>
             ))}
             <GeolocateControl position="bottom-right" />
             <NavigationControl position="bottom-right" />
             <RecenterButton className="absolute top-[8px] right-[8px]" />
           </Map>
         </div>
-        <div className="hidden lg:block col-span-1 h-[500px]">
+        <div className="col-span-3 lg:col-span-1 h-[300px] lg:h-[500px]">
           <Card className="text-content h-full overflow-auto no-scrollbar">
             <Tabs defaultValue="amenities" className="w-full">
               <CardHeader className="flex flex-row">
@@ -218,23 +213,23 @@ const EventMap = () => {
                       .map((item, i) => (
                         <div
                           key={i}
-                          className="flex gap-3 cursor-pointer bg-gray-50 p-2 rounded-lg"
+                          className="flex gap-3 cursor-pointer bg-gray-50 rounded border border-orange-50"
                         >
-                          <div className="flex-1">
-                            <div className="font-medium flex items-center gap-2">
-                              <span className="bg-orange-200 text-orange-700 font-semibold text-[10px] min-w-6 h-4 rounded-full flex items-center justify-center">
-                                {item.id}
-                              </span>
+                          <div className="w-8 bg-orange-100 text-orange-700 font-semibold text-[10px] flex items-center justify-center rounded-l">
+                            <span>{item.id}</span>
+                          </div>
+                          <div className="flex-1 py-1">
+                            <div className="font-medium">
                               <span className="text-sm"> {item.title}</span>
                             </div>
                             <div className="font-medium text-xs opacity-80 mt-1 line-clamp-1">
                               {item.desc}
                             </div>
                           </div>
-                          <div className="w-10">
+                          <div className="w-10 p-1 flex items-center">
                             {item.img && (
                               <Image
-                                className="w-10 h-10 rounded object-cover border"
+                                className="w-full rounded object-cover border"
                                 alt=""
                                 width={100}
                                 height={100}
@@ -253,23 +248,23 @@ const EventMap = () => {
                       .map((item, i) => (
                         <div
                           key={i}
-                          className="flex gap-3 cursor-pointer bg-gray-50 p-2 rounded-lg"
+                          className="flex gap-3 cursor-pointer bg-gray-50 rounded border border-violet-50"
                         >
-                          <div className="flex-1">
-                            <div className="font-medium flex items-center gap-2">
-                              <span className="bg-violet-200 text-violet-700 font-semibold text-[10px] min-w-6 h-4 rounded-full flex items-center justify-center">
-                                {item.id}
-                              </span>
+                          <div className="w-8 bg-violet-100 text-violet-700 font-semibold text-[10px] flex items-center justify-center rounded-l">
+                            <span>{item.id}</span>
+                          </div>
+                          <div className="flex-1 py-1">
+                            <div className="font-medium">
                               <span className="text-sm"> {item.title}</span>
                             </div>
                             <div className="font-medium text-xs opacity-80 mt-1 line-clamp-1">
                               {item.desc}
                             </div>
                           </div>
-                          <div className="w-10">
+                          <div className="w-10 p-1 flex items-center">
                             {item.img && (
                               <Image
-                                className="w-10 h-10 rounded object-cover border"
+                                className="w-full rounded object-cover border"
                                 alt=""
                                 width={100}
                                 height={100}

@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import {
+  BookOpen,
   FolderSearch,
   ListChecks,
   ListCollapse,
@@ -10,13 +11,13 @@ import {
   Siren,
 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const tabs = [
   {
     title: "Overview",
     path: "overview",
-    icon: <ListChecks className=" w-4" />,
+    icon: <BookOpen className=" w-4" />,
   },
   {
     title: "Itinerary",
@@ -38,36 +39,73 @@ const tabs = [
   { title: "Reviews", path: "reviews", icon: <PenLine className=" w-4" /> },
 ];
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
   const pathname = usePathname();
-  const displayNav = pathname.split("/").length > 2;
+  const { slug } = params;
+
+  const isIncludesPath = [
+    "overview",
+    "itinerary",
+    "map",
+    "instructions",
+    "emergency",
+    "lost-found",
+    "reviews",
+  ].some((path) => pathname.includes(path));
 
   return (
     <>
-      {displayNav && (
-        <nav className="hidden lg:block w-full fixed bg-white z-20">
-          <div className="max-w-screen-xl mx-auto p-4 text-center text-content">
-            <ul className="flex flex-wrap gap-6">
+      {isIncludesPath && (
+        <>
+          {/* Top nav only for desktops */}
+          <nav className="hidden lg:block w-full fixed bg-white z-20">
+            <div className="max-w-screen-xl mx-auto p-4 text-center text-content">
+              <ul className="flex flex-wrap gap-6">
+                {tabs.map((item, i) => (
+                  <li key={i}>
+                    <Link
+                      href={`/${slug}/${item.path}`}
+                      className={clsx("px-0 py-2 flex items-center gap-1", {
+                        "text-primary": pathname.includes(item.path),
+                        "opacity-80": !pathname.includes(item.path),
+                      })}
+                    >
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </nav>
+
+          {/* Responsive bottom nav only for mobile */}
+          <div className="lg:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 ">
+            <div className="flex h-full mx-auto font-medium overflow-auto no-scrollbar">
               {tabs.map((item, i) => (
-                <li key={i}>
-                  <Link
-                    href={item.path}
-                    className={clsx("px-0 py-2 flex items-center gap-1", {
-                      "text-primary": pathname.includes(item.path),
-                      "opacity-80": !pathname.includes(item.path),
-                    })}
-                  >
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
+                <Link
+                  key={i}
+                  href={`/${slug}/${item.path}`}
+                  className={clsx(
+                    "inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x",
+                    { "text-primary": pathname.includes(item.path) }
+                  )}
+                >
+                  {item.icon}
+                  <span className="text-sm text-nowrap">{item.title}</span>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
-        </nav>
+        </>
       )}
 
-      <section className={clsx("min-h-[400px]", displayNav ? "pt-12" : "")}>
+      <section
+        className={clsx(
+          "min-h-[400px]",
+          isIncludesPath ? "pb-12 lg:pt-12" : ""
+        )}
+      >
         {children}
       </section>
     </>

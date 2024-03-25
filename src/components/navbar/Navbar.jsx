@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Menu, Search, MapPin, ChevronDown, Bell } from "lucide-react";
+import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-start justify-between mx-auto p-4">
         <div className="flex flex-col md:flex-row md:items-center gap-2">
           <Link
             href="/"
@@ -24,10 +25,10 @@ const Navbar = () => {
           </button>
         </div>
 
-        <button className="inline-flex items-center p-2 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ">
+        <Button variant="outline" size="icon" className="lg:hidden">
           <span className="sr-only">Open main menu</span>
           <Menu className="w-6 h-6" />
-        </button>
+        </Button>
         <div
           className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
           id="navbar-sticky"

@@ -1,23 +1,44 @@
+"use client";
+
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isIncludesPath = [
+    "overview",
+    "itinerary",
+    "map",
+    "instructions",
+    "emergency",
+    "lost-found",
+    "reviews",
+  ].some((path) => pathname.includes(path));
+
   return (
-    <section className="w-full bg-[#0c172f] py-12">
+    <section
+      className={clsx(
+        "w-full bg-[#0c172f] py-12",
+        isIncludesPath && "hidden",
+        "lg:block"
+      )}
+    >
       <div className="max-w-screen-xl mx-auto px-4">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image
+          {/* <Image
             width={50}
             height={50}
             src="https://flowbite.com/docs/images/logo.svg"
             className="w-8 h-8"
             alt="Flowbite Logo"
-          />
+          /> */}
           <span className="self-center text-xl font-bold whitespace-nowrap text-white">
             Evento
           </span>
