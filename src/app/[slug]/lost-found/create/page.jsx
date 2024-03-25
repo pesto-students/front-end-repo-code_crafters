@@ -8,7 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { HiArrowLeft } from "react-icons/hi";
+import { HiArrowLeft, HiXCircle } from "react-icons/hi";
 
 function Page({ params }) {
   const [images, setImages] = useState([]);
@@ -32,7 +32,7 @@ function Page({ params }) {
   });
 
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="max-w-sm mx-auto mb-5">
         <Link href={`/${slug}/lost-found`}>
           <Button variant="secondary">
@@ -90,25 +90,12 @@ function Page({ params }) {
                 <Image
                   src={URL.createObjectURL(image)}
                   alt={`Preview ${index + 1}`}
-                  className="w-20 h-20 rounded object-cover"
+                  className="w-20 h-20 rounded object-cover border"
                   height={100}
                   width={100}
                 />
                 <button onClick={() => removeImage(index)}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-5 h-5 absolute text-primary -top-3 -right-3"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    />
-                  </svg>
+                  <HiXCircle className="w-5 h-5 absolute text-primary -top-2 -right-2" />
                 </button>
               </div>
             ))}

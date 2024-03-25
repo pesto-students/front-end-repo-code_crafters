@@ -3,7 +3,7 @@ import React from "react";
 
 const EmergencyInfo = () => {
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="flex gap-2 items-center">
         <Siren className="text-primary w-5 -mt-1" />
         <h2 className="text-lg font-semibold text-content uppercase">

@@ -42,7 +42,7 @@ const events = [
 export default function EventDetails() {
   return (
     <>
-      <section className="max-w-screen-xl mx-auto p-4 mt-12">
+      <section className="max-w-screen-xl mx-auto px-6 mt-12">
         <div className="w-full flex flex-col lg:flex-row gap-6 text-content">
           <div className="w-full lg:w-8/12">
             <Image
@@ -107,7 +107,7 @@ export default function EventDetails() {
           </div>
         </div>
       </section>
-      <section className="max-w-screen-xl mx-auto p-4 mt-6">
+      <section className="max-w-screen-xl mx-auto px-6 mt-12">
         <div className="border-b pb-2">
           <div className="flex gap-2 items-center">
             <Info className="text-primary" />
@@ -137,7 +137,7 @@ export default function EventDetails() {
       <Sponsors />
       <Instructions />
       <Itinerary />
-      <section className="max-w-screen-xl mx-auto p-4 mt-12">
+      <section className="max-w-screen-xl mx-auto px-6 mt-12">
         <div className="flex gap-2 items-center">
           <Lightbulb className="text-primary" />
           <h2 className="text-lg font-semibold text-content uppercase">

@@ -33,7 +33,7 @@ const events = [
 
 const RecentEvents = () => {
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="flex justify-between items-center">
         <div className="flex gap-2">
           <History className="text-primary" />

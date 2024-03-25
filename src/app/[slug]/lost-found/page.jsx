@@ -12,7 +12,7 @@ import { useParams } from "next/navigation";
 const LostAndFound = () => {
   const { slug } = useParams();
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <FolderSearch className="text-primary" />

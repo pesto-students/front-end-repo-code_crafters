@@ -35,7 +35,7 @@ const Spotlight = () => {
   ];
   return (
     <>
-      <section className="max-w-screen-xl mx-auto p-4 mt-12">
+      <section className="max-w-screen-xl mx-auto px-6 mt-12">
         <div className="w-full flex items-center justify-between">
           <div className="flex gap-2">
             <Flame className="text-primary" />

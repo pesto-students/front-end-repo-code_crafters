@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 const Navbar = () => {
   return (
     <nav className="bg-white fixed w-full z-20 top-0 start-0">
-      <div className="max-w-screen-xl flex flex-wrap items-start justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-start justify-between mx-auto px-6 py-4">
         <div className="flex flex-col md:flex-row md:items-center gap-2">
           <Link
             href="/"

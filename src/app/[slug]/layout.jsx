@@ -59,7 +59,7 @@ export default function RootLayout({ children, params }) {
         <>
           {/* Top nav only for desktops */}
           <nav className="hidden lg:block w-full fixed bg-white z-20">
-            <div className="max-w-screen-xl mx-auto p-4 text-center text-content">
+            <div className="max-w-screen-xl mx-auto px-6 text-center text-content">
               <ul className="flex flex-wrap gap-6">
                 {tabs.map((item, i) => (
                   <li key={i}>
@@ -87,12 +87,12 @@ export default function RootLayout({ children, params }) {
                   key={i}
                   href={`/${slug}/${item.path}`}
                   className={clsx(
-                    "inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x",
+                    "inline-flex flex-col items-center justify-center px-5 border-gray-200 border-r",
                     { "text-primary": pathname.includes(item.path) }
                   )}
                 >
                   {item.icon}
-                  <span className="text-sm text-nowrap">{item.title}</span>
+                  <span className="text-xs text-nowrap">{item.title}</span>
                 </Link>
               ))}
             </div>

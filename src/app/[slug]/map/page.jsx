@@ -135,7 +135,7 @@ const EventMap = () => {
   };
 
   return (
-    <section className="max-w-screen-xl mx-auto p-4 text-content mt-12">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="grid grid-cols-3 gap-6">
         <div className="col-span-3 lg:col-span-2 overflow-hidden h-[300px] lg:h-[500px] relative rounded-lg bg-gray-100">
           <Map

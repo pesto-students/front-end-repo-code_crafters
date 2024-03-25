@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Spotlight />
-      <section className="max-w-screen-xl mx-auto p-4 text-content mt-12 lg:hidden">
+      <section className="max-w-screen-xl mx-auto px-6 text-content mt-12 lg:hidden">
         <form className="w-full">
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
