@@ -29,10 +29,10 @@ const EventCard = ({ event }) => {
             <CalendarDays className="w-4 h-4 text-primary" />
           </div>
           <div className="flex flex-col">
-            <span className=" text-sm ml-2 font-medium">
+            <span className=" text-sm ml-2 font-medium line-clamp-1">
               1 March, 2024 - 3 March, 2024
             </span>
-            <span className=" text-xs ml-2">Monday, 3:00 PM</span>
+            <span className=" text-xs ml-2 line-clamp-1">Monday, 3:00 PM</span>
           </div>
         </div>
         <div className="mt-2 flex items-center ">
@@ -40,10 +40,10 @@ const EventCard = ({ event }) => {
             <MapPin className="w-4 h-4 text-primary" />
           </div>
           <div className="flex flex-col">
-            <span className=" text-sm ml-2 font-medium">
+            <span className=" text-sm ml-2 font-medium line-clamp-1">
               ACA Stadium, Barsapara
             </span>
-            <span className=" text-xs ml-2">ENTRY - Starts From Rs 200</span>
+            <span className=" text-xs ml-2 line-clamp-1">ENTRY - Starts From Rs 200</span>
           </div>
         </div>
       </div>

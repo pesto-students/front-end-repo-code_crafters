@@ -3,30 +3,27 @@ import { CalendarDays, History, MapPin, Star } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { FaAngleRight } from "react-icons/fa6";
 
 const events = [
   {
     title: "SANAM Live",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_1316/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1509056456%2Fomrrjhtb6hikonaehblv.jpg",
-    ],
+    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
   },
   {
     title: "Simba Uproar 2024 | Guwahati",
     images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1706699255%2Fdlbitczmy7n2v17uc4xy.png",
+      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
     ],
   },
   {
     title: "Kanan Gill Experience - India Tour 2024 - Guwahati",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1700556828%2Fiqwn93dgvkpc8vp8bvml.jpg",
-    ],
+    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
   },
   {
     title: "Kisi Ko Batana Mat by Anubhav Singh Bassi",
     images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1707894012%2Fmc6dexmf8biost4q27h6.png",
+      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
     ],
   },
 ];
@@ -47,9 +44,9 @@ const RecentEvents = () => {
         {events.map((event, i) => (
           <div
             key={i}
-            className="flex flex-col md:flex-row border rounded-lg shadow-sm bg-white"
+            className="grid grid-cols-12 border rounded-lg shadow-sm bg-white"
           >
-            <div className="w-full md:w-6/12">
+            <div className="col-span-12 md:col-span-4">
               <Image
                 width={480}
                 height={360}
@@ -58,7 +55,7 @@ const RecentEvents = () => {
                 alt={event.title}
               />
             </div>
-            <div className="w-full md:w-6/12 flex flex-col p-6">
+            <div className="col-span-12 md:col-span-8 flex flex-col p-6">
               <Link href="/">
                 <h5 className="text-lg font-medium tracking-tight text-content line-clamp-1">
                   {event.title}
@@ -88,6 +85,12 @@ const RecentEvents = () => {
                   23 Reviews
                 </div>
               </div>
+              <Link href={"/"} className="mt-2 flex items-center">
+                <div className="text-sm font-semibold text-primary">
+                  View Details
+                </div>
+                <FaAngleRight className="w-2 ml-1 text-primary" />
+              </Link>
             </div>
           </div>
         ))}

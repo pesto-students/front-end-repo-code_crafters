@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "../ui/badge";
+import TagList from "../tagList/TagList";
 
 const Spotlight = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
@@ -22,66 +23,66 @@ const Spotlight = () => {
   const events = [
     {
       title: "AR Rahman Concert for Peace",
-      images: [
-        "https://media.insider.in/image/upload/c_crop,g_custom/v1673065185/rxj4gti5sbb7lciqu5nb.jpg",
-      ],
+      images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
     },
     {
       title: "B Praak Live",
       images: [
-        "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_1316/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1702288015%2Fdhlkrsbpopg5cfpnz23n.jpg",
+        "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
       ],
     },
   ];
   return (
-    <>
-      <section className="max-w-screen-xl mx-auto px-6 mt-12">
-        <div className="w-full flex items-center justify-between">
-          <div className="flex gap-2">
-            <Flame className="text-primary" />
-            <h2 className="text-lg font-semibold text-content uppercase">
-              Event Spotlight
-            </h2>
-          </div>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-              onClick={slidePrev}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-
-            <Button
-              variant="outline"
-              size="icon"
-              className="rounded-full"
-              onClick={slideNext}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
-          </div>
+    <section className="grid grid-cols-12 gap-6">
+      <div className="col-span-12 flex justify-between items-center">
+        <div className="flex  gap-2">
+          <Flame className="text-primary" />
+          <h2 className="text-lg font-semibold text-content uppercase">
+            Event Spotlight
+          </h2>
         </div>
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+            onClick={slidePrev}
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
 
-        <div className="mt-6 overflow-hidden" ref={emblaRef}>
+          <Button
+            variant="outline"
+            size="icon"
+            className="rounded-full"
+            onClick={slideNext}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+
+      <div className="col-span-12 lg:col-span-8">
+        <div className="overflow-hidden border rounded-lg" ref={emblaRef}>
           <div className="flex">
             {events.map((event, index) => (
               <div
                 key={index}
-                className="flex-grow-0 flex-shrink-0 w-full min-w-0 flex flex-col lg:flex-row gap-6 text-content"
+                className="flex-grow-0 flex-shrink-0 w-full min-w-0 flex flex-col lg:flex-row text-content"
               >
-                <div className="w-full lg:w-8/12">
+                <div className="w-full lg:w-6/12">
                   <Image
-                    width={480}
-                    height={360}
+                    width={400}
+                    height={400}
                     src={event.images[0]}
-                    className="w-full h-full object-cover rounded-md"
+                    className="w-full h-full object-cover rounded-l"
                     alt="Event Spotlight"
                   />
                 </div>
-                <div className="w-full lg:w-4/12 border p-6 rounded-lg bg-white">
-                  <h1 className="text-xl font-semibold line-clamp-1">{event.title}</h1>
+                <div className="w-full lg:w-6/12 bg-white p-6">
+                  <h1 className="text-xl font-semibold line-clamp-1">
+                    {event.title}
+                  </h1>
                   <div className="mt-4 flex items-center ">
                     <div className="bg-secondary rounded-lg p-3 inline-block">
                       <CalendarDays className="w-4 h-4 text-primary" />
@@ -90,7 +91,9 @@ const Spotlight = () => {
                       <span className="ml-4 font-medium line-clamp-1">
                         1 March, 2024 - 3 March, 2024
                       </span>
-                      <span className="text-sm ml-4 line-clamp-1">Monday, 3:00 PM</span>
+                      <span className="text-sm ml-4 line-clamp-1">
+                        Monday, 3:00 PM
+                      </span>
                     </div>
                   </div>
                   <div className="mt-4 flex items-center ">
@@ -106,7 +109,7 @@ const Spotlight = () => {
                       </span>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm md:block line-clamp-6 lg:line-clamp-3 xl:line-clamp-6">
+                  <p className="mt-4 text-sm md:block line-clamp-6 lg:line-clamp-3 xl:line-clamp-5">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Impedit, mollitia? Maiores, blanditiis nulla. Ducimus, ex
                     placeat? Quam consequatur voluptates provident quae, Lorem
@@ -140,8 +143,11 @@ const Spotlight = () => {
             ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+      <div className="hidden lg:block lg:col-span-4">
+        <TagList />
+      </div>
+    </section>
   );
 };
 

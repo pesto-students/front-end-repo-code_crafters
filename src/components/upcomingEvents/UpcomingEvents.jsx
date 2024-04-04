@@ -6,43 +6,25 @@ import { Button } from "../ui/button";
 const events = [
   {
     title: "AR Rahman Concert for Peace",
-    images: [
-      "https://media.insider.in/image/upload/c_crop,g_custom/v1673065185/rxj4gti5sbb7lciqu5nb.jpg",
-    ],
+    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
     slug: "abcd-xyz",
   },
   {
     title: "B Praak Live",
     images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_1316/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1702288015%2Fdhlkrsbpopg5cfpnz23n.jpg",
+      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
     ],
     slug: "abcd-xyz",
   },
   {
     title: "SANAM Live",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_1316/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1509056456%2Fomrrjhtb6hikonaehblv.jpg",
-    ],
+    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
     slug: "abcd-xyz",
   },
   {
     title: "Simba Uproar 2024 | Guwahati",
     images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1706699255%2Fdlbitczmy7n2v17uc4xy.png",
-    ],
-    slug: "abcd-xyz",
-  },
-  {
-    title: "Kanan Gill Experience - India Tour 2024 - Guwahati",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1700556828%2Fiqwn93dgvkpc8vp8bvml.jpg",
-    ],
-    slug: "abcd-xyz",
-  },
-  {
-    title: "Kisi Ko Batana Mat by Anubhav Singh Bassi",
-    images: [
-      "https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1707894012%2Fmc6dexmf8biost4q27h6.png",
+      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
     ],
     slug: "abcd-xyz",
   },
@@ -61,7 +43,7 @@ const UpcomingEvents = () => {
 
         <Button variant="outline">VIEW ALL</Button>
       </div>
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {events.map((item, i) => (
           <EventCard event={item} key={i} />
         ))}
