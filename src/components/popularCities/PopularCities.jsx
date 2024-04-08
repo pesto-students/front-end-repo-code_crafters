@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Building2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Building2 } from "lucide-react";
 
 const cities = [
   {

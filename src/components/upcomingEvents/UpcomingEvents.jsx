@@ -6,25 +6,29 @@ import { Button } from "../ui/button";
 const events = [
   {
     title: "AR Rahman Concert for Peace",
-    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
+    images: [
+      "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380561/Evento/thumbnail/atif_aslam_vbrojn.png",
+    ],
     slug: "abcd-xyz",
   },
   {
     title: "B Praak Live",
     images: [
-      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
+      "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380759/Evento/thumbnail/b_praak2_opndqq.webp",
     ],
     slug: "abcd-xyz",
   },
   {
     title: "SANAM Live",
-    images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
+    images: [
+      "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380563/Evento/thumbnail/arijit_rjqfpd.jpg",
+    ],
     slug: "abcd-xyz",
   },
   {
     title: "Simba Uproar 2024 | Guwahati",
     images: [
-      "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
+      "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380563/Evento/thumbnail/zubin_a5pwbx.png",
     ],
     slug: "abcd-xyz",
   },

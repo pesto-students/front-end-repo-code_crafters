@@ -44,18 +44,18 @@ const RecentEvents = () => {
         {events.map((event, i) => (
           <div
             key={i}
-            className="grid grid-cols-12 border rounded-lg shadow-sm bg-white"
+            className="grid grid-cols-12 border rounded-lg bg-white"
           >
             <div className="col-span-12 md:col-span-4">
               <Image
                 width={480}
                 height={360}
-                className="object-cover w-full h-full rounded-t-lg md:rounded-r-none md:rounded-l-lg"
+                className="object-cover w-full h-full  md:rounded-l-lg"
                 src={event.images[0]}
                 alt={event.title}
               />
             </div>
-            <div className="col-span-12 md:col-span-8 flex flex-col p-6">
+            <div className="col-span-12 md:col-span-8 flex flex-col py-6 px-6">
               <Link href="/">
                 <h5 className="text-lg font-medium tracking-tight text-content line-clamp-1">
                   {event.title}

@@ -23,12 +23,14 @@ const Spotlight = () => {
   const events = [
     {
       title: "AR Rahman Concert for Peace",
-      images: ["https://pbs.twimg.com/media/FmChEr6XkAImZ4i.jpg"],
+      images: [
+        "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380554/Evento/thumbnail/ar_rahman_agweyu.webp",
+      ],
     },
     {
       title: "B Praak Live",
       images: [
-        "https://scontent.fgau3-3.fna.fbcdn.net/v/t39.30808-6/406267005_758329636336781_2133181235364031584_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NFCcsN0Z3R4AX-PJHNh&_nc_ht=scontent.fgau3-3.fna&oh=00_AfAeehNAei831PRLQ14eAstu7nzq-t1bqySB-GsWoCNEjw&oe=660ADC76",
+        "https://res.cloudinary.com/dv68nyejy/image/upload/v1712380562/Evento/thumbnail/b_praak_q2fzsf.jpg",
       ],
     },
   ];

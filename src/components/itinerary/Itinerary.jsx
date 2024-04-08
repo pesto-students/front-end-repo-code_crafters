@@ -29,7 +29,7 @@ const agenda = [
 
 const Itinerary = () => {
   return (
-    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12 min-h-[400px]">
+    <section className="max-w-screen-xl mx-auto px-6 text-content mt-12">
       <div className="flex gap-2 items-center">
         <ListChecks className="text-primary" />
         <h2 className="text-lg font-semibold text-content uppercase">

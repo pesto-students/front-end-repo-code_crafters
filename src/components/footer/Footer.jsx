@@ -27,7 +27,7 @@ const Footer = () => {
         "lg:block"
       )}
     >
-      <div className="max-w-screen-xl mx-auto px-4">
+      <div className="max-w-screen-xl mx-auto px-6">
         <Link
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -59,7 +59,7 @@ const Footer = () => {
           the sub-events and stores to get a better attraction
         </p>
         <div className="mt-6">
-          <ul className="flex gap-6 text-white opacity-80 font-medium">
+          <ul className="flex gap-6 text-white opacity-80 font-medium flex-wrap">
             <li>
               <Link href="/">About us</Link>
             </li>

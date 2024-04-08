@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import clsx from "clsx";
 import NextTopLoader from "nextjs-toploader";
+import { AppWrapper } from "@/context/AppContext";
+import { LocationModal } from "@/components/others/LocationModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,12 +16,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="no-scrollbar">
       <body className={clsx(inter.className, "text-[14px]")}>
         <NextTopLoader color="#DC2626" showSpinner={false} />
-        <Navbar />
-        <main className="pt-[65px] pb-16 min-h-screen">{children}</main>
-        <Footer />
+        <AppWrapper>
+          <Navbar />
+          <main className="pt-[65px] pb-16 min-h-screen">{children}</main>
+          <Footer />
+          <LocationModal />
+        </AppWrapper>
       </body>
     </html>
   );
