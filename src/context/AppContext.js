@@ -6,9 +6,17 @@ const AppContext = createContext();
 
 export const AppWrapper = ({ children }) => {
   const [locationModalOpen, setLocationModalOpen] = useState(false);
+  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
 
   return (
-    <AppContext.Provider value={{ locationModalOpen, setLocationModalOpen }}>
+    <AppContext.Provider
+      value={{
+        locationModalOpen,
+        setLocationModalOpen,
+        hamburgerMenuOpen,
+        setHamburgerMenuOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
