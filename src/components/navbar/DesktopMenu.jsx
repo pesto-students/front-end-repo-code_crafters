@@ -34,15 +34,6 @@ const DesktopMenu = () => {
           </button>
         </li>
         <li>
-          <Link
-            href="/"
-            className="block py-2 px-3 text-primary hover:opacity-80 rounded md:p-0 "
-            aria-current="page"
-          >
-            Manage Event
-          </Link>
-        </li>
-        <li>
           <button
             type="button"
             className="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
